@@ -1,13 +1,19 @@
 public class Airline {
     private int id;
     private int capacity;
+    private int economyCapacity;
+    private int businessCapacity;
+    private int firstClassCapacity;
     private String brand;
     private String type;
 
-    public Airline(int id, int capacity, String brand, String type)
+    public Airline(int id, int economyCapacity, int businessCapacity, int firstClassCapacity, String brand, String type)
     {
         this.id=id;
-        this.capacity=capacity;
+        this.economyCapacity=economyCapacity;
+        this.businessCapacity=businessCapacity;
+        this.firstClassCapacity=firstClassCapacity;
+        this.capacity=economyCapacity+businessCapacity+firstClassCapacity;
         this.brand=brand;
         this.type=type;
     }
@@ -20,12 +26,36 @@ public class Airline {
         this.id = id;
     }
 
+    public int getEconomyCapacity() {
+        return economyCapacity;
+    }
+
+    public void setEconomyCapacity(int economyCapacity) {
+        this.economyCapacity = economyCapacity;
+    }
+
+    public int getBusinessCapacity() {
+        return businessCapacity;
+    }
+
+    public void setBusinessCapacity(int businessCapacity) {
+        this.businessCapacity = businessCapacity;
+    }
+
+    public int getFirstClassCapacity() {
+        return firstClassCapacity;
+    }
+
+    public void setFirstClassCapacity(int firstClassCapacity) {
+        this.firstClassCapacity = firstClassCapacity;
+    }
+
     public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setCapacity() {
+        this.capacity = economyCapacity+businessCapacity+firstClassCapacity;
     }
 
     public String getBrand() {

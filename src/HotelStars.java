@@ -6,18 +6,6 @@ public enum HotelStars {
         this.value=value;
     }
 
-    public static HotelStars fromInt(int i)
-    {
-        for (HotelStars b : HotelStars.values())
-        {
-            if(b.getValue()==i)
-            {
-                return b;
-            }
-        }
-        return null;
-    }
-
     public int getValue()
     {
         return value;

@@ -1,10 +1,10 @@
-public class Reservation {
+public class FlightReservation {
     private Customer customer;
     private Flight flight;
     private SeatClasses SEAT_CLASS;
     private int numberOfPeople;
 
-    public Reservation(Customer customer, Flight flight, SeatClasses SEAT_CLASS, int numberOfPeople)
+    public FlightReservation(Customer customer, Flight flight, SeatClasses SEAT_CLASS, int numberOfPeople)
     {
         this.customer=customer;
         this.flight=flight;

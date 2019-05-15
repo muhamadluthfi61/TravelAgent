@@ -1,14 +1,14 @@
 public class Hotel {
-private int id;
-private String name;
-private Location address;
-private HotelStars HOTEL_STAR;
+    private int id;
+    private String name;
+    private Location address;
+    private int stars;
 
-    public Hotel(int id, String name, Location address, HotelStars HOTEL_STAR) {
+    public Hotel(int id, String name, Location address, int stars) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.HOTEL_STAR = HOTEL_STAR;
+        this.stars = stars;
     }
 
     public int getId() {
@@ -35,11 +35,11 @@ private HotelStars HOTEL_STAR;
         this.address = address;
     }
 
-    public HotelStars getHOTEL_STAR() {
-        return HOTEL_STAR;
+    public int getStars() {
+        return stars;
     }
 
-    public void setHOTEL_STAR(HotelStars HOTEL_STAR) {
-        this.HOTEL_STAR = HOTEL_STAR;
+    public void setStars(int stars) {
+        this.stars = stars;
     }
 }

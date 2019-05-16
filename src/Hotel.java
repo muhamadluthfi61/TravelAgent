@@ -1,10 +1,10 @@
 public class Hotel {
     private int id;
     private String name;
-    private Location address;
+    private HotelLocation address;
     private int stars;
 
-    public Hotel(int id, String name, Location address, int stars) {
+    public Hotel(int id, String name, HotelLocation address, int stars) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -15,31 +15,34 @@ public class Hotel {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Location getAddress() {
+    public HotelLocation getAddress() {
         return address;
-    }
-
-    public void setAddress(Location address) {
-        this.address = address;
     }
 
     public int getStars() {
         return stars;
     }
 
-    public void setStars(int stars) {
-        this.stars = stars;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(HotelLocation address) {
+        this.address = address;
+    }
+
+    public void setStars(int stars) { this.stars = stars; }
+
+
+    public String toString(){
+        return "Nama Hotel\t:" + getName() + "\nLokasi\t\t" + address.getCity() + "\nBintang\t\t" + getStars();
     }
 }

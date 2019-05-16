@@ -7,9 +7,9 @@ public class Airline {
     private String brand;
     private String type;
 
-    public Airline(int id, int economyCapacity, int businessCapacity, int firstClassCapacity, String brand, String type)
+    public Airline(int economyCapacity, int businessCapacity, int firstClassCapacity, String brand, String type)
     {
-        this.id=id;
+        this.id=DatabaseAirline.getLastAirline()+1;
         this.economyCapacity=economyCapacity;
         this.businessCapacity=businessCapacity;
         this.firstClassCapacity=firstClassCapacity;

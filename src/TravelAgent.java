@@ -9,12 +9,14 @@ public class TravelAgent {
     {
         Schedule schedule = new Schedule(2019,5,5,10,0,2,0);
         Location location = new Location("Jakarta","Bali");
-        Airline airline = new Airline(1,100,50,10,"Boeing","Max 737");
-        Flight flight = new Flight("JB",airline,location,schedule);
-        Customer customer = new Customer(1,"fadel",1998,5,5,"fadel","fadel@gmail.com","1234");
-        Reservation reser1 = new Reservation(customer, flight, SeatClasses.Economy, 50);
+        Airline airline = new Airline(100,50,0,"Boeing","Max 737");
+        Flight flight = new Flight("JB",airline,500000,2000000,10000000,location,schedule);
+        Customer customer = new Customer("fadel",1998,5,5,"fadel","fadel@gmail.com","Fadel1234");
+        FlightReservation reser1 = new FlightReservation(customer, flight, SeatClasses.Economy, 50);
         System.out.println(flight.getEconomyCapacity());
-        Reservation reser2 = new Reservation(customer, flight, SeatClasses.Economy, 60);
+        FlightReservation reser2 = new FlightReservation(customer, flight, SeatClasses.Economy, 50);
         System.out.println(flight.getEconomyCapacity());
+        FlightReservation reser3 = new FlightReservation(customer, flight, SeatClasses.FirstClass, 2);
+        System.out.println(flight.getFirstClassCapacity());
     }
 }

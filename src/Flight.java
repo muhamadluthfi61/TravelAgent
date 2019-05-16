@@ -5,16 +5,22 @@ public class Flight {
     private int economyCapacity;
     private int businessCapacity;
     private int firstClassCapacity;
+    private int economyPrice;
+    private int businessPrice;
+    private int firstClassPrice;
     private Location route;
     private Schedule schedule;
 
-    public Flight(String number, Airline airline, Location route, Schedule schedule) {
+    public Flight(String number, Airline airline, int economyPrice, int businessPrice, int firstClassPrice, Location route, Schedule schedule) {
         this.number = number;
         this.airline = airline;
         this.capacity = airline.getCapacity();
         this.economyCapacity = airline.getEconomyCapacity();
         this.businessCapacity = airline.getBusinessCapacity();
         this.firstClassCapacity = airline.getFirstClassCapacity();
+        this.economyPrice = economyPrice;
+        this.businessPrice = businessPrice;
+        this.firstClassPrice = firstClassPrice;
         this.route = route;
         this.schedule = schedule;
     }
@@ -48,7 +54,7 @@ public class Flight {
     }
 
     public void setEconomyCapacity(int economyCapacity) throws NoCapacityException {
-        if(economyCapacity<=0)
+        if(economyCapacity<0)
         {
             throw new NoCapacityException();
         }
@@ -75,6 +81,30 @@ public class Flight {
         {
             throw new NoCapacityException();
         }this.firstClassCapacity = firstClassCapacity;
+    }
+
+    public int getEconomyPrice() {
+        return economyPrice;
+    }
+
+    public void setEconomyPrice(int economyPrice) {
+        this.economyPrice = economyPrice;
+    }
+
+    public int getBusinessPrice() {
+        return businessPrice;
+    }
+
+    public void setBusinessPrice(int businessPrice) {
+        this.businessPrice = businessPrice;
+    }
+
+    public int getFirstClassPrice() {
+        return firstClassPrice;
+    }
+
+    public void setFirstClassPrice(int firstClassPrice) {
+        this.firstClassPrice = firstClassPrice;
     }
 
     public Location getRoute() {

@@ -15,7 +15,8 @@ public class Customer {
     private String password;
     private int age;
 
-    public Customer(int id, String name, int year, int month, int day, String username, String email, String password) {
+    public Customer(String name, int year, int month, int day, String username, String email, String password) {
+        this.id=DatabaseCustomer.getLastCustomer()+1;
         this.birthDate = new GregorianCalendar(year, month, day);
         GregorianCalendar today = new GregorianCalendar();
         this.age = today.get(today.YEAR) - birthDate.get(YEAR);
@@ -33,7 +34,6 @@ public class Customer {
         {
             throw new IllegalArgumentException("Your age must be above 18");
         }
-        this.id = id;
         this.name = name;
         this.username = username;
         String pattern =  "^([a-zA-Z0-9(&*_~)]+([.])?)+[a-zA-Z0-9(&*_~)]+@([a-zA-Z0-9]+[-]?[a-zA-Z0-9]+)+([.]([a-zA-Z0-9]+))+$";
@@ -56,10 +56,6 @@ public class Customer {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
